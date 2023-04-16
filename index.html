@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Trek: Vulcans and Klingons</title>
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,300;1,300;1,600&display=swap" rel="stylesheet">
+
+    <!-- My Styles -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Star Trek: <span>Vulcans &amp; Klingons</span></h1>
+
+    <main>
+        <aside>
+            <h2>Select Ships</h2>
+            <ol start="0">
+                <li><span>0</span><a href="#" id="icon0"><img src="images/icon0.png" alt="Cardasian"></a> Cardasian Ship</li>
+                <li><span>1</span><a href="#" id="icon1"><img src="images/icon1.png" alt="Defiant"></a> The Defiant</li>
+                <li><span>2</span><a href="#" id="icon2"><img src="images/icon2.png" alt="Enterprise"></a> USS Enterprise NCC 1701A</li>
+                <li><span>3</span><a href="#" id="icon3"><img src="images/icon3.png" alt="Ferengi"></a> Ferengi Marauder</li>
+                <li><span>4</span><a href="#" id="icon4"><img src="images/icon4.png" alt="Klingon Bird"></a> Klingon Bird of Prey</li>
+                <li><span>5</span><a href="#" id="icon5"><img src="images/icon5.png" alt="Jem Hadar"></a> Jem Hadar Battle Cruiser</li>
+                <li><span>6</span><a href="#" id="icon6"><img src="images/icon6.png" alt="Romulan"></a> Romulan Warbird</li>
+                <li><span>7</span><a href="#" id="icon7"><img src="images/icon7.png" alt="8472"></a> Species 8472 Bio Ship</li>
+                <li><span>8</span><a href="#" id="icon8"><img src="images/icon8.png" alt="Klingon Kting"></a> Klingon Kting Class Battle Cruiser</li>
+                <li><span>9</span><a href="#" id="icon9"><img src="images/icon9.png" alt="Voyager"></a> USS Voyager</li>
+            </ol>
+
+        </aside>
+        <div>
+            <div class="container">
+                <section id="controls">
+                    <div id="selector" class="selectedships">
+                        <section>
+                            <div id="choice1" class="option"></div>
+                            <p id="shipnum1"></p>
+                        </section>
+                        <section>
+                            <div id="choice2" class="option"></div>
+                            <p id="shipnum2"></p>
+                        </section>
+                        <section>
+                            <div id="choice3" class="option"></div>
+                            <p id="shipnum3"></p>
+                        </section>
+                        <section>
+                            <div id="choice4" class="option"></div>
+                            <p id="shipnum4"></p>
+                        </section>
+                    </div>
+                    <a href="#" id="send" class="hidden">Send Probe</a>
+
+                </section>
+                <section id="probes">
+                    <p>You have</p>
+                    <p>10</p>
+                    <p>probes left!</p>
+                </section>
+            </div>
+            <section id="scoreboard"></section>
+        </div>
+        
+    </main>
+    <article id="mission" class="up">
+        <h2><img src="images/communicator.png" alt="communicator">Mission Details</h2>
+        <div>
+            <p><img src="images/vulcan.png" alt="vulcan" width="343" height="800">Captain&rsquo;s log, Stardate 76509.1. We are currently on a deep space assignment and have reviewed a transmission that indicates there is an altercation between four different ships in a specific configuration. However, the transmission is corrupt and incomplete. It is your mission to deduce the correct ships in the correct configuration!</p>
+
+            <p>Click the available ships in the interface to add their data to the probe and when you have four of them loaded, you can launch the probe.</p>
+                
+            <p>We have only ten probes, and due to an anomaly in space, we can only get limited information back from the probes.</p> 
+                
+            <p>For each image of a Vulcan the probe sends, it means we got the correct ship in the correct configuration. Each image of a Klingon we receive from the probes indicate that we got the correct ship, but it&rsquo;s in the wrong spot.</p>
+                
+            <p>My science officer assures me that you can deduce the correct configuration of four different ships. After all, it is only logical!</p>
+        </div>
+    </article>
+
+    <article id="alert" class="overlay hidden">
+        <h2>Red Alert!</h2>
+        <p>PetaQ! You have already added four ships!</p>
+        <a href="#" class="button">Execute!</a>
+        <img src="images/klingon.png" alt="Klingon">
+    </article>
+
+    <article id="success" class="overlay hidden">
+        <h2>Mission Success!</h2>
+        <p>Congratulations commander, you have successfully applied logic to the situation and properly descrambled the communication. Now if only we could get some of our probes back! Perhaps you could do it with fewer resources next time?</p>
+        <a href="#" class="button restart">Fascinating!</a>
+        <img src="images/spock.png" alt="spock">
+    </article>
+
+    <article id="failure" class="overlay hidden">
+        <h2>Failure!</h2>
+        <p>You PetaQ! Your mother has a flat forehead. You have failed and used up all our probes. I should kill you where you stand!</p>
+        <a href="#" class="button restart">Execute!</a>
+        <img src="images/klingon2.png" alt="spock">
+    </article>
+</body>
+</html>
